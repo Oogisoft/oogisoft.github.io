@@ -799,43 +799,25 @@
       <div class="section-label">04 / Contact</div>
       <h2 class="section-title">Get In Touch</h2>
       <div class="section-divider"></div>
-      <div class="contact-wrap reveal">
-        <div class="contact-info">
-          <p>
-            Need an IT consultant, a custom AI bot, a PC built, or just want to talk tech?
-            My inbox is open.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:eddie@oogisoft.com" class="contact-link">
-              <div class="contact-link-icon">✉️</div>
-              eddie@oogisoft.com
-            </a>
-            <a href="https://www.linkedin.com/in/eddie-tri-rodriguez/" target="_blank" rel="noopener" class="contact-link">
-              <div class="contact-link-icon">🔗</div>
-              LinkedIn — Eddie Rodriguez
-            </a>
-            <a href="https://github.com/oogisoft" target="_blank" rel="noopener" class="contact-link">
-              <div class="contact-link-icon">🐙</div>
-              GitHub — Oogisoft
-            </a>
-          </div>
+      <div class="reveal">
+        <p style="color: var(--muted); margin-bottom: 1.5rem;">
+          Need an IT consultant, a custom AI bot, a PC built, or just want to talk tech?
+          My inbox is open.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:eddie@oogisoft.com" class="contact-link">
+            <div class="contact-link-icon">✉️</div>
+            eddie@oogisoft.com
+          </a>
+          <a href="https://www.linkedin.com/in/eddie-tri-rodriguez/" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">🔗</div>
+            LinkedIn — Eddie Rodriguez
+          </a>
+          <a href="https://github.com/oogisoft" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">🐙</div>
+            GitHub — Oogisoft
+          </a>
         </div>
-        <form id="contact-form" onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Your name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="you@example.com" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell me what you need..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-orange form-submit">Send Message →</button>
-          <p id="form-msg" style="display:none; margin-top:0.75rem; color: var(--green); font-family: var(--mono); font-size:0.85rem;"></p>
-        </form>
       </div>
     </div>
   </section>
@@ -871,21 +853,6 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Contact form — swap handleSubmit body for real Formspree/EmailJS endpoint when ready
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      const msg = document.getElementById('form-msg');
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-      setTimeout(() => {
-        btn.textContent = 'Sent ✓';
-        msg.style.display = 'block';
-        msg.textContent = "// Message received — I'll be in touch soon!";
-        e.target.reset();
-      }, 1200);
-    }
 
     // Active nav highlight
     const sections  = document.querySelectorAll('section[id]');
