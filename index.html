@@ -9,19 +9,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #07090f;
-      --bg2:       #0c0f1a;
-      --bg3:       #101525;
-      --orange:    #F97316;
-      --blue:      #2563EB;
-      --green:     #16A34A;
+      --bg:        #04070C;
+      --bg2:       #070C14;
+      --bg3:       #0B1220;
+      --orange:    #00D4F5;
+      --blue:      #A855F7;
+      --green:     #22F09A;
       --text:      #e2e8f0;
-      --muted:     #64748b;
-      --border-o:  rgba(249,115,22,0.18);
-      --border-b:  rgba(37,99,235,0.18);
-      --glow-o:    0 0 22px rgba(249,115,22,0.30);
-      --glow-b:    0 0 22px rgba(37,99,235,0.30);
-      --glow-g:    0 0 22px rgba(22,163,74,0.30);
+      --muted:     #607080;
+      --border-o:  rgba(0,212,245,0.20);
+      --border-b:  rgba(168,85,247,0.20);
+      --glow-o:    0 0 28px rgba(0,212,245,0.38);
+      --glow-b:    0 0 28px rgba(168,85,247,0.38);
+      --glow-g:    0 0 28px rgba(34,240,154,0.38);
       --font:      'Segoe UI', system-ui, sans-serif;
       --mono:      'Consolas', 'Courier New', monospace;
     }
@@ -49,8 +49,8 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1rem 2.5rem;
-      background: rgba(7, 9, 15, 0.88);
-      backdrop-filter: blur(14px);
+      background: rgba(4, 7, 12, 0.82);
+      backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border-o);
     }
 
@@ -84,44 +84,38 @@
       padding: 6rem 2rem 4rem;
       position: relative;
       overflow: hidden;
+      background-image: url('EF4k.jpg');
+      background-size: cover;
+      background-position: center 35%;
     }
 
-    /* Diagonal stripe background — Broncos vibe */
+    /* Dark overlay so text stays readable over the photo */
     #hero::before {
       content: '';
       position: absolute; inset: 0;
-      background:
-        repeating-linear-gradient(
-          -55deg,
-          rgba(249,115,22,0.03) 0px,
-          rgba(249,115,22,0.03) 1px,
-          transparent 1px,
-          transparent 60px
-        ),
-        repeating-linear-gradient(
-          35deg,
-          rgba(37,99,235,0.03) 0px,
-          rgba(37,99,235,0.03) 1px,
-          transparent 1px,
-          transparent 80px
-        );
+      background: linear-gradient(
+        to bottom,
+        rgba(4, 7, 12, 0.68) 0%,
+        rgba(6, 4, 18, 0.55) 50%,
+        rgba(4, 7, 12, 0.82) 100%
+      );
     }
 
-    /* Dual glow orbs */
+    /* Subtle teal glow orb */
     #hero::after {
       content: '';
       position: absolute;
-      top: 40%; left: 35%;
-      width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 65%);
+      top: 38%; left: 30%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,212,245,0.06) 0%, transparent 65%);
       pointer-events: none;
     }
 
     .hero-glow-b {
       position: absolute;
-      top: 30%; right: 25%;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(37,99,235,0.07) 0%, transparent 65%);
+      top: 25%; right: 20%;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 65%);
       pointer-events: none;
     }
 
@@ -136,8 +130,8 @@
       font-family: var(--mono);
       font-size: 0.83rem;
       color: var(--green);
-      border: 1px solid rgba(22,163,74,0.35);
-      background: rgba(22,163,74,0.07);
+      border: 1px solid rgba(34,240,154,0.40);
+      background: rgba(34,240,154,0.08);
       padding: 0.3rem 1rem;
       border-radius: 2rem;
       margin-bottom: 1.5rem;
@@ -153,8 +147,8 @@
       animation: fadeDown 0.7s ease 0.1s both;
     }
 
-    .hero-name .orange { color: var(--orange); text-shadow: 0 0 32px rgba(249,115,22,0.45); }
-    .hero-name .blue   { color: var(--blue);   text-shadow: 0 0 32px rgba(37,99,235,0.45); }
+    .hero-name .orange { color: var(--orange); text-shadow: 0 0 40px rgba(0,212,245,0.60); }
+    .hero-name .blue   { color: var(--blue);   text-shadow: 0 0 40px rgba(168,85,247,0.60); }
 
     .hero-subtitle {
       margin-top: 1.2rem;
@@ -363,9 +357,9 @@
       transition: width 1.2s ease;
     }
 
-    .bar-orange { background: linear-gradient(90deg, var(--orange), #fbbf24); }
-    .bar-blue   { background: linear-gradient(90deg, var(--blue),   #60a5fa); }
-    .bar-green  { background: linear-gradient(90deg, var(--green),  #4ade80); }
+    .bar-orange { background: linear-gradient(90deg, var(--orange), #67e8f9); }
+    .bar-blue   { background: linear-gradient(90deg, var(--blue),   #e879f9); }
+    .bar-green  { background: linear-gradient(90deg, var(--green),  #86efac); }
 
     /* ── PROJECTS ─────────────────────────────────────────────── */
     #projects { background: var(--bg2); }
@@ -486,7 +480,7 @@
 
     input:focus, textarea:focus {
       border-color: var(--orange);
-      box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
+      box-shadow: 0 0 0 3px rgba(0,212,245,0.12);
     }
 
     textarea { resize: vertical; min-height: 130px; }
