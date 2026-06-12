@@ -258,6 +258,78 @@
       margin-bottom: 2.8rem;
     }
 
+    .bridge-section {
+      padding: 5.5rem 2rem;
+      background: linear-gradient(180deg, rgba(7,12,20,0.96), rgba(11,18,32,0.96));
+      border-top: 1px solid rgba(0,212,245,0.12);
+      border-bottom: 1px solid rgba(168,85,247,0.12);
+    }
+
+    .bridge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .bridge-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(96,112,128,0.18);
+      border-radius: 18px;
+      padding: 1.4rem 1.4rem 1.5rem;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+    }
+
+    .bridge-card h3 {
+      font-size: 1.12rem;
+      margin: 0.8rem 0 0.6rem;
+    }
+
+    .bridge-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .bridge-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .bridge-card .bridge-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--green);
+      font-family: var(--mono);
+    }
+
+    .bridge-story {
+      max-width: 860px;
+      margin: 0 auto;
+      color: var(--text);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      text-align: center;
+    }
+
+    .bridge-story strong { color: var(--orange); }
+
+    .bridge-notes {
+      max-width: 860px;
+      margin: 1.2rem auto 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .bridge-notes span { color: var(--blue); }
+
+    @media (max-width: 900px) {
+      .bridge-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── ABOUT ────────────────────────────────────────────────── */
     #about { background: var(--bg2); }
 
@@ -661,6 +733,45 @@
     </div>
   </section>
 
+  <!-- ── BRIDGE SECTION ─────────────────────────────────────────── -->
+  <section class="bridge-section">
+    <div class="section-inner">
+      <div class="section-label">02.5 / Systems in Motion</div>
+      <h2 class="section-title">How the stack comes together</h2>
+      <div class="section-divider"></div>
+
+      <div class="bridge-grid">
+        <div class="bridge-card reveal">
+          <div class="bridge-icon">🧠</div>
+          <h3>Hermes</h3>
+          <p>A practical AI layer for business work. I use it to help organize, draft, route, and follow through without losing context. It keeps the day moving when there is a lot happening at once.</p>
+          <div class="bridge-tag">Business AI Assist</div>
+        </div>
+
+        <div class="bridge-card reveal">
+          <div class="bridge-icon">🕸️</div>
+          <h3>OpenClaw</h3>
+          <p>The orchestration layer. It helps connect agents, model choices, and the right tools for each workflow. It is where the systems side and the AI side actually meet.</p>
+          <div class="bridge-tag">Agent Orchestration</div>
+        </div>
+
+        <div class="bridge-card reveal">
+          <div class="bridge-icon">🔄</div>
+          <h3>n8n</h3>
+          <p>The automation backbone. I use it to wire real workflows together, move data between systems, and make repeatable work run cleanly in the background.</p>
+          <div class="bridge-tag">Workflow Automation</div>
+        </div>
+      </div>
+
+      <p class="bridge-story reveal">
+        The story is simple. <strong>Hermes</strong> helps me stay on top of the work, <strong>OpenClaw</strong> decides how the AI should think and route, and <strong>n8n</strong> pushes the real-world steps through the rest of the stack. Together they let me turn a messy process into something repeatable, useful, and easy to maintain.
+      </p>
+      <p class="bridge-notes reveal">
+        That stack pulls from <span>Hugging Face</span> when I need custom models, and it reaches into the rest of the lab when the job calls for it.
+      </p>
+    </div>
+  </section>
+
   <!-- ── PROJECTS ───────────────────────────────────────────────── -->
   <section id="projects">
     <div class="section-inner">
@@ -668,22 +779,6 @@
       <h2 class="section-title">Things I've Built</h2>
       <div class="section-divider"></div>
       <div class="projects-grid">
-
-        <div class="project-card hover-orange reveal">
-          <div class="project-header">
-            <div class="project-icon">🤖</div>
-            <span class="project-type type-orange">AI / Infrastructure</span>
-          </div>
-          <h3>OogiAI Discord Bot</h3>
-          <p>Multi-agent Discord bot running on OpenClaw. Public channels route to a Haiku agent with a custom friend-chat persona. My private sessions go to Sonnet. A sandboxed channel runs qwen2.5-coder locally through Ollama. All the routing, workspace prompts, and per-user behavior is hand-configured. No off-the-shelf bot setup.</p>
-          <div class="project-tags">
-            <span class="tag tag-orange">OpenClaw</span>
-            <span class="tag tag-orange">Discord</span>
-            <span class="tag tag-green">Claude API</span>
-            <span class="tag tag-green">Multi-Agent</span>
-            <span class="tag tag-blue">Ollama</span>
-          </div>
-        </div>
 
         <div class="project-card hover-green reveal">
           <div class="project-header">
@@ -713,6 +808,22 @@
             <span class="tag tag-orange">OpenClaw</span>
             <span class="tag tag-blue">Automation</span>
             <span class="tag tag-blue">Workflows</span>
+          </div>
+        </div>
+
+        <div class="project-card hover-green reveal">
+          <div class="project-header">
+            <div class="project-icon">🏈</div>
+            <span class="project-type type-green">Full-Stack / AI</span>
+          </div>
+          <h3>The Super Best Friends</h3>
+          <p>Built a whole fantasy football platform for my keeper league. Full auth, user accounts, real-time chat. AI bot is in the works.</p>
+          <a href="https://thesuperbestfriends.com" target="_blank" rel="noopener" class="project-link">→ Visit thesuperbestfriends.com</a>
+          <div class="project-tags">
+            <span class="tag tag-orange">JavaScript</span>
+            <span class="tag tag-blue">Auth / Login</span>
+            <span class="tag tag-green">AI Bot</span>
+            <span class="tag tag-blue">Real-Time Chat</span>
           </div>
         </div>
 
